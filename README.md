@@ -12,7 +12,7 @@ Uma simples agenda telefônica fazendo uso de tecnologias aprendidas em sala, co
 ## Pré-requisitos de Implantação
 Para efetuar a implantação da aplicação, se faz necessário ter instalado e configurado as seguintes tecnologias:
 
-- <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a>
+- <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="blank">Git</a>
 - <a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html" target="_blank">JDK</a>
 - <a href="http://maven.apache.org/install.html" target="_blank">Maven</a>
 - <a href="https://docs.docker.com/engine/installation/" target="_blank">Docker</a>
