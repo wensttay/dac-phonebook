@@ -1,5 +1,5 @@
 # dac-phonebook
-Uma simples agenda telefônica fazendo uso de tecnologias aprendidas em sala, como: JSF, EJB3 e Docker, desenvolvida como exercício de avaliação para a cadeira de Desenvolvimento de Aplicações Corporativas (DAC) do Curso de Análise e Desenvolvimento de Sistemas (ADS) do IFPB campus Cajazeiras.
+Uma simplória aplicação de agenda telefônica que faz uso de tecnologias como: JSF, EJB3 e Docker, desenvolvida como exercício de avaliação para a cadeira de Desenvolvimento de Aplicações Corporativas (DAC) do Curso de Análise e Desenvolvimento de Sistemas (ADS) do IFPB campus Cajazeiras.
 
 ## Requisitos Funcionais
 
