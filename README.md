@@ -12,11 +12,11 @@ Uma simples agenda telefônica fazendo uso de tecnologias aprendidas em sala, co
 ## Pré-requisitos de Implantação
 Para efetuar a implantação da aplicação, se faz necessário ter instalado e configurado as seguintes tecnologias:
 
-- <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="blank">Git</a>
-- <a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html" target="_blank">JDK</a>
-- <a href="http://maven.apache.org/install.html" target="_blank">Maven</a>
-- <a href="https://docs.docker.com/engine/installation/" target="_blank">Docker</a>
-- <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose</a> (Opcional)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [JDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)
+- [Maven](http://maven.apache.org/install.html)
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker Compose](https://docs.docker.com/compose/install/) (Opcional)
 
 ## Manual de Implantação
 **Após instalar e configurar as ferramentas descritas em 'Pré-requisitos de Implantação'**, precisamos efetuar o download do código fonte do projeto para a sua máquina, e para isso, basta seguir os passos a seguir:
@@ -33,7 +33,7 @@ Visando facilitar a implantação desse projeto, o mesmo disponibiliza três for
 #### Usando Bourne Shell (.sh) no Linux 
 Execute o seguinte comando **dentro do diretorio raiz do projeto**:
 
-1. `sudo sh start.sh`
+1. `sh start.sh`
 
 #### Usando o Docker Compose
 Execute os seguintes comandos **dentro do diretorio raiz do projeto**:
@@ -45,11 +45,11 @@ Execute os seguintes comandos **dentro do diretorio raiz do projeto**:
 Execute os seguintes comandos **dentro do diretorio raiz do projeto**:
 
 1. `mvn clean install`
-2. `docker build -t dac-phonebook-core-db ./dac-phonebook-core/src/main/resources`
+2. `docker build -t dac-phonebook-core-db ./dac-phonebook-core/src/main/resources/banco/`
 3. `docker build -t dac-phonebook-core ./dac-phonebook-core`
-4. `docker build -t dac-phonebook-web ./dac-phonebook--web`
-5. `docker run -p 5433:5432 -d --name dac-phonebook-core-db dac-contacts-core-db`
+4. `docker build -t dac-phonebook-web ./dac-phonebook-web`
+5. `docker run -p 5433:5432 -d --name dac-phonebook-core-db dac-phonebook-core-db`
 6. `docker run -p 8081:8080 -p 1098:1099 -p 1097:1098 -p 3874:3873 -p 3701:3700 -p 8182:8181 -p 8010:8009 -d --name dac-phonebook-core --link dac-phonebook-core-db:dac-phonebook-core-db dac-phonebook-core`
 7. `docker run -p 8082:8080 -d --name dac-phonebook-web --link dac-phonebook-core:dac-phonebook-core dac-phonebook-web`
 
-Independente de qual das três maneiras de implantar for executada, **caso não tenha a nécessidade de alterar as portas definidas nos comandos desctritos**, a aplicação estará disponivel para acesso em: <a href="http://localhost:8082/dac-phonebook-web/" target="_blank">http://localhost:8082/dac-phonebook-web/</a>
+Independente de qual das três maneiras de implantar for executada, **caso não tenha a nécessidade de alterar as portas definidas nos comandos desctritos**, a aplicação estará disponivel para acesso em: [http://localhost:8082/dac-phonebook-web/](http://localhost:8082/dac-phonebook-web/)
