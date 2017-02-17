@@ -12,11 +12,11 @@ Uma simples agenda telefônica fazendo uso de tecnologias aprendidas em sala, co
 ## Pré-requisitos de Implantação
 Para efetuar a implantação da aplicação, se faz necessário ter instalado e configurado as seguintes tecnologias:
 
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"}
-- [JDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html){:target="_blank"}
-- [Maven](http://maven.apache.org/install.html){:target="_blank"}
-- [Docker](https://docs.docker.com/engine/installation/){:target="_blank"}
-- [Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"} (Opcional)
+- <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a>
+- <a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html" target="_blank">JDK</a>
+- <a href="http://maven.apache.org/install.html" target="_blank">Maven</a>
+- <a href="https://docs.docker.com/engine/installation/" target="_blank">Docker</a>
+- <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose</a> (Opcional)
 
 ## Manual de Implantação
 **Após instalar e configurar as ferramentas descritas em 'Pré-requisitos de Implantação'**, precisamos efetuar o download do código fonte do projeto para a sua máquina, e para isso, basta seguir os passos a seguir:
@@ -52,4 +52,4 @@ Execute os seguintes comandos **dentro do diretorio raiz do projeto**:
 6. `docker run -p 8081:8080 -p 1098:1099 -p 1097:1098 -p 3874:3873 -p 3701:3700 -p 8182:8181 -p 8010:8009 -d --name dac-phonebook-core --link dac-phonebook-core-db:dac-phonebook-core-db dac-phonebook-core`
 7. `docker run -p 8082:8080 -d --name dac-phonebook-web --link dac-phonebook-core:dac-phonebook-core dac-phonebook-web`
 
-Independente de qual das três maneiras de implantar for executada, **caso não tenha a nécessidade de alterar as portas definidas nos comandos desctritos**, a aplicação estará disponivel para acesso em: [http://localhost:8082/dac-phonebook-web/](http://localhost:8082/dac-phonebook-web/){:target="_blank"}
+Independente de qual das três maneiras de implantar for executada, **caso não tenha a nécessidade de alterar as portas definidas nos comandos desctritos**, a aplicação estará disponivel para acesso em: <a href="http://localhost:8082/dac-phonebook-web/" target="_blank">http://localhost:8082/dac-phonebook-web/</a>
