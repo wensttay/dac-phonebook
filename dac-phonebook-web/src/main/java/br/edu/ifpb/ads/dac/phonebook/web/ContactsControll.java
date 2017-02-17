@@ -48,24 +48,31 @@ public class ContactsControll implements Serializable {
         if (!listOrderByName.isEmpty()) {
             List<Contact> contacts = new ArrayList<>();
 
-            char firstLetter = listOrderByName.get(0).getName().charAt(0);
+            String name = listOrderByName.get(0).getName().toUpperCase().trim();
+            char firstLetter = name.charAt(0);
             contacts.add(listOrderByName.get(0));
 
-            for (int i = 1; i < listOrderByName.size(); i++) {
+            if (listOrderByName.size() == 1) {
+                cgs.add(new ContactsGroup("" + firstLetter, contacts));
+            } else {
+                for (int i = 1; i < listOrderByName.size(); i++) {
+                    String otherName = listOrderByName.get(i).getName().toUpperCase().trim();
 
-                if (listOrderByName.get(i).getName().charAt(0) == firstLetter) {
-                    contacts.add(listOrderByName.get(i));
-                } else {
-                    cgs.add(new ContactsGroup("" + firstLetter, contacts));
-                    firstLetter = listOrderByName.get(i).getName().charAt(0);
-                    contacts = new ArrayList<>();
-                    contacts.add(listOrderByName.get(i));
+                    if (otherName.charAt(0) == firstLetter) {
+                        contacts.add(listOrderByName.get(i));
+                    } else {
+                        cgs.add(new ContactsGroup("" + firstLetter, contacts));
+                        firstLetter = otherName.charAt(0);
+                        contacts = new ArrayList<>();
+                        contacts.add(listOrderByName.get(i));
+                    }
                 }
-
-                if (i == listOrderByName.size() - 1) {
+                
+                if (!contacts.isEmpty()) {
                     cgs.add(new ContactsGroup("" + firstLetter, contacts));
                 }
             }
+
         }
 
         return cgs;
@@ -123,11 +130,11 @@ public class ContactsControll implements Serializable {
      * @return
      */
     private boolean validContact(Contact contact) {
-        return !(this.getContact().getEmail() != null
+        return !(this.getContact().getEmail() == null
                 || this.getContact().getEmail().equals("")
-                || this.getContact().getName() != null
+                || this.getContact().getName() == null
                 || this.getContact().getName().equals("")
-                || this.getContact().getNumber() != null
+                || this.getContact().getNumber() == null
                 || this.getContact().getNumber().equals(""));
     }
 

@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo mvn clean install
-sudo docker-compose up -d --build
+mvn clean install
+docker-compose up -d --build
